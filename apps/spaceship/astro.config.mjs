@@ -9,9 +9,10 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react()],
-
-  adapter: node({
-    mode: 'standalone'
-  })
+  integrations: [
+    tailwind(),
+    react({
+      include: ['./src/components/react/**/*.{js,jsx,ts,tsx}'],
+    }),
+  ],
 });

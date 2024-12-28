@@ -1,11 +1,39 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Accordion from '../components/react/Accordion';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const items = [
+  {
+    id: 1,
+    title: 'Is it accessible?',
+    content: 'Yes. It adheres to the WAI-ARIA design pattern.',
+  },
+  {
+    id: 2,
+    title: 'Is it styled?',
+    content:
+      'Yes. It comes with default styles that matches the other components&apos; aesthetic.',
+  },
+  {
+    id: 3,
+    title: 'Is it animated?',
+    content:
+      ' Yes. It&apos;s animated by default, but you can disable it if you prefer.',
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <Accordion client:load items={items} />
+  <p>More content here that is pretty static</p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, ad quis
+    consequuntur libero assumenda consequatur ex itaque eius eveniet molestiae
+    adipisci non magni? Voluptates maiores cum repellat labore, aliquid commodi?
+  </p>
+  <section>
+    <p>This button has an event that doesn't fire</p>
+  </section>
+  <Welcome />
 </Layout>
