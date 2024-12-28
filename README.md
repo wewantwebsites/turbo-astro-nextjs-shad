@@ -22,7 +22,7 @@ So you may have to do something like
 
 ```diff
 - import { cn } from '@workspace/lib/utils';
-+ import { cn } from '@workspace/ui/li/utils';
++ import { cn } from '@workspace/ui/lib/utils';
 ```
 
 ## Tailwind
